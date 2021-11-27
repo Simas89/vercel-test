@@ -6,7 +6,7 @@ orbs:
 jobs:
   install:
     docker:
-      - image: cimg/node14.17
+      - image: cimg/node:14.17.6
     steps:
       - checkout
       - vercel-orb/install
