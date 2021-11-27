@@ -1,32 +1,21 @@
 version: 2.1
 orbs:
   cypress: cypress-io/cypress@1
-
-workflows:
-  build:
-    jobs:
-      - deploy
-      # - cypress/install:
-      #     yarn: true
-      #     build: 'yarn build'
-
-      # - cypress/run:
-      #     requires:
-      #       - cypress/install
-      #     parallel: true
-      #     parallelism: 2
-      #     record: false
-      #     group: 'group nam'
-      #     yarn: true
-      #     start: 'yarn start'
-
-      #     wait-on: http://localhost:3000
-      #     command: 'yarn cypress run'
+  vercel-orb: i-am-jeetu/vercel-orb@1.0.0
 
 jobs:
-  deploy:
+  example-job:
     docker:
-      - image: cimg/node:14.17.6
+      # replace with your preferred image
+      - image: cimg/base:stable
     steps:
-      - checkout
-      - run: echo 'Hello World!'
+      - vercel-orb/deploy:
+          vercel-token: S4GKeECRISKzL3zoi6sWOAbp 
+          scope-name: simaszurauskas 
+          
+workflows:
+  example-workflow:
+    jobs:
+      - example-job
+
+
