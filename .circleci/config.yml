@@ -1,0 +1,31 @@
+version: 2.1
+orbs:
+  cypress: cypress-io/cypress@1
+
+workflows:
+  build:
+    jobs:
+      - deploy
+      # - cypress/install:
+      #     yarn: true
+      #     build: 'yarn build'
+
+      # - cypress/run:
+      #     requires:
+      #       - cypress/install
+      #     parallel: true
+      #     parallelism: 2
+      #     record: false
+      #     group: 'group nam'
+      #     yarn: true
+      #     start: 'yarn start'
+      #     wait-on: http://localhost:3000
+      #     command: 'yarn cypress run'
+
+jobs:
+  deploy:
+    docker:
+      - image: cimg/node:14.17.6
+    steps:
+      - checkout
+      - run: echo 'Hello World!'
