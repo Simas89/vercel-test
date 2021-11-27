@@ -9,7 +9,7 @@ jobs:
       - image: cimg/node:14.17.6
     steps:
       - checkout
-      - run: npm i -g vercel
+      - run: npm i vercel
       - vercel-orb/deploy:
           vercel-token: S4GKeECRISKzL3zoi6sWOAbp 
           scope-name: simaszurauskas 
