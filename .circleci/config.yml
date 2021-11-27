@@ -10,9 +10,10 @@ jobs:
     steps:
       - checkout
       - run: npm i vercel
+      - vercel-orb/install
       - vercel-orb/deploy:
           vercel-token: S4GKeECRISKzL3zoi6sWOAbp 
-          scope-name: simaszurauskas 
+          scope-name: simaszurauskas
 
   # deploy:
   #   docker:
