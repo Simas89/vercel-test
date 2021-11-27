@@ -4,18 +4,29 @@ orbs:
   vercel-orb: i-am-jeetu/vercel-orb@1.0.0
 
 jobs:
-  example-job:
+  install:
     docker:
-      # replace with your preferred image
-      - image: cimg/base:stable
+      - image: cimg/node:14.17.6
     steps:
+      - checkout
+      - run: npm i -g vercel
       - vercel-orb/deploy:
           vercel-token: S4GKeECRISKzL3zoi6sWOAbp 
           scope-name: simaszurauskas 
-          
+
+  # deploy:
+  #   docker:
+  #     # replace with your preferred image
+  #     - image: cimg/base:stable
+  #   steps:
+  #     - vercel-orb/deploy:
+  #         vercel-token: S4GKeECRISKzL3zoi6sWOAbp 
+  #         scope-name: simaszurauskas 
+
 workflows:
-  example-workflow:
+  main-workfow:
     jobs:
-      - example-job
+      - install
+      # - deploy
 
 
