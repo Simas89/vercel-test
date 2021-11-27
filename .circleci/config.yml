@@ -10,10 +10,11 @@ jobs:
     steps:
       - checkout
       - run: npm install --prefix=$HOME/.local --global vercel
+      - run: vercel -t $S4GKeECRISKzL3zoi6sWOAbp -C
       # - vercel-orb/install
-      - vercel-orb/deploy:
-          vercel-token: S4GKeECRISKzL3zoi6sWOAbp 
-          scope-name: simaszurauskas
+      # - vercel-orb/deploy:
+      #     vercel-token: S4GKeECRISKzL3zoi6sWOAbp 
+      #     scope-name: simaszurauskas
 
   # deploy:
   #   docker:
