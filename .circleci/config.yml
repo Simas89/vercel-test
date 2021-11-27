@@ -9,7 +9,7 @@ jobs:
       - image: cimg/node:14.17.6
     steps:
       - checkout
-      - vercel-orb/install
+      # - vercel-orb/install
       - vercel-orb/deploy:
           vercel-token: S4GKeECRISKzL3zoi6sWOAbp 
           scope-name: simaszurauskas
